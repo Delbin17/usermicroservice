@@ -6,7 +6,6 @@ import com.example.UserMicroService.UserDto.UserDto;
 import com.example.UserMicroService.UserEntity.User;
 
 
-@Service
 public interface UserService {
 	
 	 void userRegister(UserDto user);

@@ -1,12 +1,12 @@
 package com.example.UserMicroService.UserServiceImpl;
 
-import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.UserMicroService.UserDto.UserDto;
 import com.example.UserMicroService.UserEntity.User;
 import com.example.UserMicroService.UserRepository.UserRepository;
 import com.example.UserMicroService.UserService.UserService;
+import org.springframework.stereotype.Service;
 
 
 @Service
@@ -28,12 +28,11 @@ public class UserImpl implements UserService {
 		userDetails.setCountry(dto.getCountry());
 		userDetails.setIsKycVerified(dto.getIsKycVerified());
 		userDetails.setProfilePictureUrl(dto.getProfilePictureUrl());
-		userDetails.setStatus(dto.getStatus());
 		userDetails.setReferralCode(dto.getReferralCode());
 		userDetails.setLastLoginTime(dto.getLastLoginTime());
 		userDetails.setEmailVerified(dto.getEmailVerified());
 		userDetails.setPhoneVerified(dto.getPhoneVerified());
-		
+
 		
 		userRepository.save(userDetails);		
 		

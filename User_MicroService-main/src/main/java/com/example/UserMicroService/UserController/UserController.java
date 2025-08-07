@@ -1,5 +1,6 @@
 package com.example.UserMicroService.UserController;
 
+import com.example.UserMicroService.UserServiceImpl.UserImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +17,11 @@ import com.example.UserMicroService.UserService.UserService;
 public class UserController {
 	
 	@Autowired
-	UserService userService;
+	UserImpl userService;
 	
 	@PostMapping("/registeruser")
 	public ResponseEntity<String> createUser(@RequestBody UserDto dto){
-		userService.userRegister(dto);
+		userService.userRegister( dto);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body("user registered Succesfulllly");
 		
